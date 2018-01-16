@@ -55,8 +55,22 @@ public class MyDevice {
         // 3. 음악
         //music.play(C);
 
-         데모();
+         //데모();
         // 예제();
+        long limit = 1000;
+        display.show("10.00");
+        pause(1);
+        while(true){
+            limit -= 1;
+            display.show('0'+Long.toString(limit/100)+'.'+Long.toString(limit%100));
+            pause(0.01);
+            if(limit == 0 ){
+                display.show("00.00");
+                break;
+            }
+            display.clear();
+        }
+        light.on(ALL, WHITE);
     }
 
     void 예제() {
